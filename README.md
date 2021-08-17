@@ -1,4 +1,4 @@
-#CompilerJs 
+<h1>CompilerJs </h1>
 CompilerJs is Node JS library use to compile code for programing languages like C/C++, Java, Python.
 Currently support Window and Linux
 
@@ -57,7 +57,7 @@ Documentation
 <h5>1)Require compilerJs </h5>
 
 ```javascript
-const compilerJs = require('compileJs');
+const compilerJs = require('@00sukhjeet00/compilerjs');
 compilerJs.init();
 ```
 init() creates a folder named code in your project directory which is used for storage purpose.
@@ -137,10 +137,9 @@ Before using other methods , make sure to call init() method.
         res.send(data);        
     });
 ```
-<h5>Optional Timeout functionality</h5>
-<p>
+<h2>Optional Timeout functionality</h2>
 Timeout help to run program for perticular time (in sec). It support window and linux system. Timeout can be used similarly in C/C++, Java, Python as showen below. Timeout option return true or false.
-</p>
+
 ```javascript
 //if windows
 	const envData={OS: "window", ext: "py", options: {timeout:5} } // timeout: 5 running program for 5 sec.
@@ -150,9 +149,10 @@ Timeout help to run program for perticular time (in sec). It support window and 
 ```
 
 <h2>Demo Code</h2>
-<h3>Python:</h3>
+<h4>Python:</h4>
+
 ```javascript
-	const CompilerJS = require('compilerJs')
+	const CompilerJS = require('@00sukhjeet00/compilerjs')
 	const code =  `i=input()\nprint('Hello World ',i)`
 	const envData = { OS:'windows', ext: 'py', options: { timeout: 5 } }
 	const input='1'
