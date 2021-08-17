@@ -1,15 +1,14 @@
 {
-  "name": "compilerjs",
+  "name": "@00sukhjeet00/compiler-js",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "00sukhjeet00",
   "license": "MIT",
   "dependencies": {
-    "color": "^4.0.1",
     "cuid": "^2.1.8"
   }
 }

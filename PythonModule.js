@@ -3,7 +3,7 @@ const exec = require('child_process').exec
 const cuid = require('cuid')
 const CompilePyModule = (envData, code, cb) => {
     if (envData.ext !== 'py')
-        console.log(`[x]INFO: to use Python use py`)
+        console.log(`[x]INFO:to use Python use py`)
     else {
         const fileName = cuid.slug()
         const path = './code/'
