@@ -120,7 +120,7 @@ Before using other methods , make sure to call init() method.
 <h5>7)Python with inputs</h5>
 
 ```javascript
-    const envData = { OS : "linux" , ext:"py"}; 
+    const envData = { ext:"py" options: {timeout:5000} }; 
     compilerJs.compilePythonWithInput( envData , code , input ,(data)=>{
         console.log(data);        
     });
