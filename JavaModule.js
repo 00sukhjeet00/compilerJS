@@ -39,16 +39,14 @@ const JavaModuleCompile = (envData, code, cb) => {
                                 }
                             })
                             if (envData.options.timeout) {
-                                if (envData.OS === 'windows') {
-                                    setTimeout(() => {
-                                        if (programNotFinished) {
-                                            programNotFinished = false
-                                            console.log(`[+]INFO: ${path}/Main.java has been terminated`)
-                                            var out = { timeout: true }
-                                            cb(out)
-                                        }
-                                    }, envData.options.timeout)
-                                }
+                                setTimeout(() => {
+                                    if (programNotFinished) {
+                                        programNotFinished = false
+                                        console.log(`[+]INFO: ${path}/Main.java has been terminated`)
+                                        var out = { timeout: true }
+                                        cb(out)
+                                    }
+                                }, envData.options.timeout)
                             }
                         }
                     })
