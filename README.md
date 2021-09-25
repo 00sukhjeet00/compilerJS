@@ -1,6 +1,6 @@
 <h1>CompilerJs </h1>
 CompilerJs is Node JS library use to compile code for programing languages like C/C++, Java, Python.
-Currently support Window and Linux
+Support Mac OS(Timeout functionality is not implemented provide), Windows, Linux System.
 
 Setting Up Compilers 
 ====================
@@ -66,26 +66,24 @@ Before using other methods , make sure to call init() method.
 <h5>2)C and C++ </h5>
 
 ```javascript
-    //if windows  
-    const envData = { OS : "windows" , ext : "g++"}; // (uses g++ command to compile )
-    //else
-    const envData = { OS : "linux" , ext : "gcc" }; // ( uses gcc command to compile )
+    //Implementation for windows  
+    const envData = { ext : "g++",options:{timeout:5000}} // (uses g++ command to compile )
+    //Implementation for Linux and Mac OS(Timeout functionlity is not implemented)
+    const envData = { OS : "linux" , ext : "gcc" } // ( uses gcc command to compile )
     compilerJs.compileCPP(envData , code ,(data)=> {
-        res.send(data);
+        console.log(data)
         //data.error = error message 
         //data.output = output value
-    });
-    
-    //res is the response object
+    })
 ```
 
 <h5>3)C and C++ with inputs </h5>
 
 ```javascript
-    //if windows  
-    const envData = { OS : "windows" , ext : "g++"}; // (uses g++ command to compile )
-    //else
-    const envData = { OS : "linux" , ext : "gcc" }; // ( uses gcc command to compile )
+    //Implementation for windows Linux and Mac OS(Timeout functionlity is not implemented)
+    const envData = { ext : "g++",options:{timeout:5000}} // (uses g++ command to compile )
+    //Implementation for  Linux and Mac OS(Timeout functionlity is not implemented)
+    const envData = { ext : "gcc" ,options:{timeout:5000}}; // ( uses gcc command to compile )
     compilerJs.compileCPPWithInput(envData , code , input , (data)=> {
         res.send(data);
     });
