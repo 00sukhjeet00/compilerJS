@@ -24,38 +24,19 @@ const CompilePyModule = (envData, code, cb) => {
                         if (programNotFinished) {
                             programNotFinished = false
                             console.log(`[+]INFO: ${fileName}.py successfully executed`)
-                            const out = { output: stdout }
-                            cb(out)
+                            cb({ out: stdout })
                         }
                     }
                 })
                 if (envData.options.timeout) {
-                    if (envData.OS === 'windows')
-                    {
-                        setTimeout(() => {
-                            exec(`cd code & taskkill /im ${fileName}.py /f > nul`, (error, stdout, sterr) => {
-                                if (programNotFinished) {
-                                    programNotFinished = false
-                                    console.log(`[+]INFO: ${fileName}.py has been terminated`)
-                                    var out = { timeout: true }
-                                    cb(out)
-                                }
-                            })
-                        }, envData.options.timeout)    
-                    }
-                    else if (envData.OS === 'linux')
-                    {
-                        setTimeout(() => {
-                            exec(`cd code & taskkill /im ${fileName}.py /f > nul`, (error, stdout, sterr) => {
-                                if (programNotFinished) {
-                                    programNotFinished = false
-                                    console.log(`[+]INFO: ${fileName}.py has been terminated`)
-                                    var out = { timeout: true }
-                                    cb(out)
-                                }
-                            })
-                        }, envData.options.timeout)    
-                    }
+                    setTimeout(() => {
+                        if (programNotFinished) {
+                            programNotFinished = false
+                            console.log(`[+]INFO: ${fileName}.py has been terminated`)
+                            var out = { timeout: true }
+                            cb(out)
+                        }
+                    }, envData.options.timeout)
                 }
             }
 
@@ -91,38 +72,19 @@ const CompilePyModuleWithInput = (envData, code, input, cb) => {
                                     if (programNotFinished) {
                                         programNotFinished = false
                                         console.log(`[+]INFO: ${fileName}.py executed successfully`)
-                                        const out = { output: stdout }
-                                        cb(out)
+                                        cb({ out: stdout })
                                     }
                                 }
                             })
                             if (envData.options.timeout) {
-                                if (envData.OS === 'windows')
-                                {
-                                    setTimeout(() => {
-                                        exec(`cd code & taskkill /im ${fileName}.py /f > nul`, (error, stdout, sterr) => {
-                                            if (programNotFinished) {
-                                                programNotFinished = false
-                                                console.log(`[+]INFO: ${fileName}.py has been terminated`)
-                                                var out = { timeout: true }
-                                                cb(out)
-                                            }
-                                        })
-                                    }, envData.options.timeout)    
-                                }
-                                else if (envData.OS === 'linux')
-                                {
-                                    setTimeout(() => {
-                                        exec(`cd code & taskkill /im ${fileName}.py /f > nul`, (error, stdout, sterr) => {
-                                            if (programNotFinished) {
-                                                programNotFinished = false
-                                                console.log(`[+]INFO: ${fileName}.py has been terminated`)
-                                                var out = { timeout: true }
-                                                cb(out)
-                                            }
-                                        })
-                                    }, envData.options.timeout)    
-                                }
+                                setTimeout(() => {
+                                    if (programNotFinished) {
+                                        programNotFinished = false
+                                        console.log(`[+]INFO: ${fileName}.py has been terminated`)
+                                        var out = { timeout: true }
+                                        cb(out)
+                                    }
+                                }, envData.options.timeout)
                             }
                         }
                     })

@@ -39,31 +39,15 @@ const JavaModuleCompile = (envData, code, cb) => {
                                 }
                             })
                             if (envData.options.timeout) {
-                                if (envData.OS === 'windows')
-                                {
+                                if (envData.OS === 'windows') {
                                     setTimeout(() => {
-                                        exec(`cd ${path} & taskkill /im Main.java /f > nul`, (error, stdout, stderr) => {
-                                            if (programNotFinished) {
-                                                programNotFinished = false
-                                                console.log(`[+]INFO: ${path}/Main.java has been terminated`)
-                                                var out = { timeout: true }
-                                                cb(out)
-                                            }
-                                        })
-                                    }, envData.options.timeout)    
-                                }
-                                else if (envData.OS === 'linux')
-                                {
-                                    setTimeout(() => {
-                                        exec(`cd ${path} & killall Main.java`, (error, stdout, stderr) => {
-                                            if (programNotFinished) {
-                                                programNotFinished = false
-                                                console.log(`[+]INFO: ${path}/Main.java has been terminated`)
-                                                var out = { timeout: true }
-                                                cb(out)
-                                            }
-                                        })
-                                    }, envData.options.timeout)    
+                                        if (programNotFinished) {
+                                            programNotFinished = false
+                                            console.log(`[+]INFO: ${path}/Main.java has been terminated`)
+                                            var out = { timeout: true }
+                                            cb(out)
+                                        }
+                                    }, envData.options.timeout)
                                 }
                             }
                         }
@@ -114,32 +98,15 @@ const JavaModuleCompileWithInput = (envData, code, input, cb) => {
                                         }
                                     })
                                     if (envData.options.timeout) {
-                                        if (envData.OS === 'windows')
-                                        {
-                                            setTimeout(() => {
-                                                exec(`cd ${path} & taskkill /im Main.java /f > nul`, (error, stdout, stderr) => {
-                                                    if (programNotFinished) {
-                                                        programNotFinished = false
-                                                        console.log(`[+]INFO: ${path}/Main.java has been terminated`)
-                                                        var out = { timeout: true }
-                                                        cb(out)
-                                                    }
-                                                })
-                                            }, envData.options.timeout)    
-                                        }
-                                        else if (envData.OS === 'linux')
-                                        {
-                                            setTimeout(() => {
-                                                exec(`cd ${path} & killall Main.java`, (error, stdout, stderr) => {
-                                                    if (programNotFinished) {
-                                                        programNotFinished = false
-                                                        console.log(`[+]INFO: ${path}/Main.java has been terminated`)
-                                                        var out = { timeout: true }
-                                                        cb(out)
-                                                    }
-                                                })
-                                            }, envData.options.timeout)    
-                                        }
+                                        setTimeout(() => {
+                                            if (programNotFinished) {
+                                                programNotFinished = false
+                                                console.log(`[+]INFO: ${path}/Main.java has been terminated`)
+                                                var out = { timeout: true }
+                                                cb(out)
+                                            }
+
+                                        }, envData.options.timeout)
                                     }
                                 }
                             })

@@ -1,14 +1,19 @@
 {
   "name": "@00sukhjeet00/compilerjs",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Code Compiling library",
   "main": "compilerJs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": ["compiler","compilerjs"],
   "author": "00sukhjeet00",
   "license": "MIT",
   "dependencies": {
     "cuid": "^2.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/00sukhjeet00/compilerJs"
   }
 }
