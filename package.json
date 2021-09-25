@@ -1,16 +1,13 @@
 {
   "name": "@00sukhjeet00/compilerjs",
-  "version": "1.0.1",
+  "version": "1.5.1",
   "description": "Code Compiling library",
   "main": "compilerJs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-<<<<<<< HEAD
   "keywords": ["compiler","compilerjs"],
-=======
   "keywords": ["compiler"],
->>>>>>> eebd42e5c3adc9a1ee20ddc2a5f92418dadc2f9f
   "author": "00sukhjeet00",
   "license": "MIT",
   "dependencies": {
