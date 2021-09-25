@@ -1,6 +1,6 @@
 const compilerJs = require('./compilerJs')
 compilerJs.init()
-const envData = { OS: 'windows', ext: 'py', options: { timeout: 1 } }
+const envData = { ext: 'py', options: { timeout: 1 } }
 const code=`print('hello')`
 compilerJs.compilePy(envData, code, (data) => {
     if (data.error)
