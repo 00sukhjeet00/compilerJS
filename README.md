@@ -69,7 +69,7 @@ Before using other methods , make sure to call init() method.
     //Implementation for windows  
     const envData = { ext : "g++",options:{timeout:5000}} // (uses g++ command to compile )
     //Implementation for Linux and Mac OS(Timeout functionlity is not implemented)
-    const envData = { OS : "linux" , ext : "gcc" } // ( uses gcc command to compile )
+    const envData = { ext : "gcc", options:{timeout:5000} } // ( uses gcc command to compile )
     compilerJs.compileCPP(envData , code ,(data)=> {
         console.log(data)
         //data.error = error message 
@@ -152,3 +152,4 @@ Timeout help to run program for perticular time (in ms). It support window and l
     		}
 	})
 ```
+<p>Similar code structure for other languages</p>
