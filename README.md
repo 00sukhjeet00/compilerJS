@@ -1,6 +1,6 @@
 <h1>CompilerJs </h1>
 CompilerJs is Node JS library use to compile code for programing languages like C/C++, Java, Python.
-Currently support Window and Linux
+<br/>Support Mac OS(Timeout functionality is not implemented), Windows and Linux System.
 
 Setting Up Compilers 
 ====================
@@ -66,101 +66,90 @@ Before using other methods , make sure to call init() method.
 <h5>2)C and C++ </h5>
 
 ```javascript
-    //if windows  
-    const envData = { OS : "windows" , ext : "g++"}; // (uses g++ command to compile )
-    //else
-    const envData = { OS : "linux" , ext : "gcc" }; // ( uses gcc command to compile )
+    //Implementation for windows  
+    const envData = { ext : "g++",options:{timeout:5000}} // (uses g++ command to compile )
+    //Implementation for Linux and Mac OS(Timeout functionlity is not implemented)
+    const envData = { ext : "gcc", options:{timeout:5000} } // ( uses gcc command to compile )
     compilerJs.compileCPP(envData , code ,(data)=> {
-        res.send(data);
+        console.log(data)
         //data.error = error message 
         //data.output = output value
-    });
-    
-    //res is the response object
+    })
 ```
 
 <h5>3)C and C++ with inputs </h5>
 
 ```javascript
-    //if windows  
-    const envData = { OS : "windows" , ext : "g++"}; // (uses g++ command to compile )
-    //else
-    const envData = { OS : "linux" , ext : "gcc" }; // ( uses gcc command to compile )
+    //Implementation for windows Linux and Mac OS(Timeout functionlity is not implemented)
+    const envData = { ext : "g++",options:{timeout:5000}} // (uses g++ command to compile )
+    
+    //Implementation for  Linux and Mac OS(Timeout functionlity is not implemented)
+    const envData = { ext : "gcc" ,options:{timeout:5000}}; // ( uses gcc command to compile )
+    
     compilerJs.compileCPPWithInput(envData , code , input , (data)=> {
-        res.send(data);
+       	console.log(data);
     });
 ```
 
 <h5>4)Java</h5>
 
 ```javascript
-    //if windows  
-    var envData = { OS : "windows",ext:"java"}; 
-    //if linux
-    var envData = { OS : "linux",ext:"java" }; 
+    var envData = { ext:"java" ,options:{timeout:5000} }; 
     compilerJs.compileJava( envData , code ,(data)=>{
-        res.send(data);
+        console.log(data);
     });    
 ```
 
 <h5>5)Java with inputs</h5>
 
 ```javascript
-    //if windows  
-    const envData = { OS : "windows",ext:"java"}; 
-    //if linux
-    const envData = { OS : "linux" ,ext:"java"}; 
+    const envData = { ext:"java" ,options:{timeout:5000} }; 
     compilerJs.compileJavaWithInput( envData , code , input ,(data)=>{
-        res.send(data);
+        console.log(data);
     });
 ```
 <h5>6)Python</h5>
 
 ```javascript
-    //if windows  
-    const envData = { OS : "windows", ext:"py"}; 
-    //if linux
-    const envData = { OS : "linux" , ext:"py"}; 
+    const envData = { ext:"py" ,options:{timeout:5000} }; 
     compilerJs.compilePython( envData , code ,(data)=>{
-        res.send(data);
+        console.log(data);
     });    
 ```
 
 <h5>7)Python with inputs</h5>
 
 ```javascript
-    //if windows  
-    const envData = { OS : "windows", ext:"py"}; 
-    //if linux
-    const envData = { OS : "linux" , ext:"py"}; 
+    const envData = { ext:"py" options: {timeout:5000} }; 
     compilerJs.compilePythonWithInput( envData , code , input ,(data)=>{
-        res.send(data);        
+        console.log(data);        
     });
 ```
-<h2>Optional Timeout functionality</h2>
-Timeout help to run program for perticular time (in sec). It support window and linux system. Timeout can be used similarly in C/C++, Java, Python as showen below. Timeout option return true or false.
+<h2>Timeout functionality</h2>
+Timeout help to run program for perticular time (in ms). It support window and linux system. Timeout can be used similarly in C/C++, Java, Python as showen below. 
 
 ```javascript
-//if windows
-	const envData={OS: "window", ext: "py", options: {timeout:5} } // timeout: 5 running program for 5 sec.
-	
-//if linux
-	const envData={OS: "linux", ext: "py", options: {timeout:5} } // timeout: 5 running program for 5 sec.
+	const envData={ ext: "py", options: {timeout:5000} } // timeout: 5 running program for 5 sec.
 ```
 
 <h2>Demo Code</h2>
 <h4>Python:</h4>
 
 ```javascript
-	const CompilerJS = require('@00sukhjeet00/compilerjs')
-	const code =  `i=input()\nprint('Hello World ',i)`
-	const envData = { OS:'windows', ext: 'py', options: { timeout: 5 } }
-	const input='1'
-	CompilerJS.init()
-	CompilerJS.compilePyWithInput(envData, code,input, (data) => {
-		if (data.error)
-			console.log(data.error)
-		else
-			console.log(data.output)
+	const compilerJS = require('@00sukhjeet00/compilerjs')
+	compilerJs.init()
+	const envData = { ext: 'py', options: { timeout: 1 } }
+	const code=`print('hello')`
+	compilerJs.compilePy(envData, code, (data) => {
+    		if (data.error)
+        		console.log(data.error)
+    		else
+		{
+        		if (data.timeout)
+            			console.log('TLE')
+        		else
+            			console.log(data.out)
+    		}
 	})
 ```
+<p>Similar code structure for other languages</p>
