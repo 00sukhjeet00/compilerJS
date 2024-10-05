@@ -19,9 +19,9 @@ In order to compile any programming language , you need to first have the compil
 
 ```javascript
 
-const  compilerJs  =  require('@00sukhjeet00/compilerjs');
+import  { init }  from '@00sukhjeet00/compilerjs';
 
-compilerJs.init();
+init();
 
 ```
 
@@ -45,7 +45,7 @@ const  envData  =  { ext :  "g++",options:{timeout:5000}}  // (uses g++ command 
 
 const  envData  =  { ext :  "gcc", options:{timeout:5000}  }  // ( uses gcc command to compile )
 
-compilerJs.compileCPP(envData  ,  code  ,(data)=>  {
+compileCPP(envData  ,  code  ,(data)=>  {
 
 console.log(data)
 
@@ -73,7 +73,7 @@ const  envData  =  { ext :  "g++",options:{timeout:5000}}  // (uses g++ command 
 
 const  envData  =  { ext :  "gcc"  ,options:{timeout:5000}};  // ( uses gcc command to compile )
 
-compilerJs.compileCPPWithInput(envData  ,  code  ,  input  ,  (data)=>  {
+compileCPPWithInput(envData  ,  code  ,  input  ,  (data)=>  {
 
 console.log(data);
 
@@ -91,7 +91,7 @@ console.log(data);
 
 var  envData  =  { ext:"java"  ,options:{timeout:5000}  };
 
-compilerJs.compileJava(  envData  ,  code  ,(data)=>{
+compileJava(  envData  ,  code  ,(data)=>{
 
 console.log(data);
 
@@ -125,7 +125,7 @@ console.log(data);
 
 const  envData  =  { ext:"py"  ,options:{timeout:5000}  };
 
-compilerJs.compilePython(  envData  ,  code  ,(data)=>{
+compilePython(  envData  ,  code  ,(data)=>{
 
 console.log(data);
 
@@ -143,7 +143,7 @@ console.log(data);
 
 const  envData  =  { ext:"py"  options: {timeout:5000}  };
 
-compilerJs.compilePythonWithInput(  envData  ,  code  ,  input  ,(data)=>{
+compilePythonWithInput(  envData  ,  code  ,  input  ,(data)=>{
 
 console.log(data);
 
@@ -173,15 +173,15 @@ const  envData={ ext:  "py", options:  {timeout:5000}  }  // timeout: 5 running 
 
 ```javascript
 
-const  compilerJS  =  require('@00sukhjeet00/compilerjs')
+import  { init, compilePy }  from '@00sukhjeet00/compilerjs'
 
-compilerJs.init()
+init()
 
 const  envData  =  { ext:  'py', options:  { timeout:  1000  }  }
 
 const  code=`print('hello')`
 
-compilerJs.compilePy(envData,  code,  (data)  =>  {
+compilePy(envData,  code,  (data)  =>  {
 
 if  (data.error)
 
