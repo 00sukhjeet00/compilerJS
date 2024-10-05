@@ -1,5 +1,5 @@
 import { Callback, EnvData } from "./types";
-export default class CompileJs {
+declare const compileJs: {
     init: () => void;
     compileCPP: (envData: EnvData, code: string, cb: Callback) => void;
     compileCPPWithInput: (envData: EnvData, code: string, input: string, cb: Callback) => void;
@@ -7,4 +7,5 @@ export default class CompileJs {
     compilePyWithInput: (envData: EnvData, code: string, input: string, cb: Callback) => void;
     compileJava: (envData: EnvData, code: string, cb: Callback) => void;
     compileJavaWithInput: (envData: EnvData, code: string, input: string, cb: Callback) => void;
-}
+};
+export default compileJs;
