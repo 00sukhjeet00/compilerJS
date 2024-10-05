@@ -1,6 +1,6 @@
 {
-  "name": "compileFlowJS",
-  "version": "1.6.0",
+  "name": "js-transpiler",
+  "version": "2.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -10,7 +10,12 @@
   },
   "keywords": [
     "compiler",
-    "compilerjs"
+    "compilerjs",
+    "transpiler",
+    "transpilerjs",
+    "compiler-js",
+    "js-compiler",
+    "js-transpiler"
   ],
   "author": "Sukhjeet Singh",
   "license": "MIT",
