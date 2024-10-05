@@ -1,25 +1,24 @@
 {
   "name": "compilerjs",
-  "version": "1.6.0",
-  "description": "Code Compiling library",
-  "main": "compilerJs.ts",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
   },
-  "keywords": [
-    "compiler",
-    "compilerjs"
-  ],
-  "author": "Sukhjeet Singh",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
     "@types/node": "^22.7.4",
-    "cuid": "^2.1.8",
+    "cuid": "^3.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/00sukhjeet00/compilerJs"
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
