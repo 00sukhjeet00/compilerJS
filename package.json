@@ -4,13 +4,19 @@
   "description": "Code Compiling library",
   "main": "compilerJs.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["compiler","compilerjs"],
-  "author": "00sukhjeet00",
+  "keywords": [
+    "compiler",
+    "compilerjs"
+  ],
+  "author": "Sukhjeet Singh",
   "license": "MIT",
   "dependencies": {
-    "cuid": "^2.1.8"
+    "@types/node": "^22.7.4",
+    "cuid": "^2.1.8",
+    "typescript": "^5.6.2"
   },
   "repository": {
     "type": "git",
