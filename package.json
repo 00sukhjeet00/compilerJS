@@ -1,5 +1,5 @@
 {
-  "name": "js-transpiler",
+  "name": "@00sukhjeet00/compilerjs",
   "version": "2.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
