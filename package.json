@@ -1,6 +1,6 @@
 {
   "name": "compilerjs",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -8,8 +8,11 @@
     "start": "node dist/index.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "compiler",
+    "compilerjs"
+  ],
+  "author": "Sukhjeet Singh",
   "license": "ISC",
   "description": "",
   "dependencies": {
@@ -20,5 +23,9 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/00sukhjeet00/compilerJs"
   }
 }
