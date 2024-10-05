@@ -1,8 +1,8 @@
 {
-  "name": "@00sukhjeet00/compilerjs",
-  "version": "1.5.3",
+  "name": "compilerjs",
+  "version": "1.6.0",
   "description": "Code Compiling library",
-  "main": "compilerJs.js",
+  "main": "compilerJs.ts",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
